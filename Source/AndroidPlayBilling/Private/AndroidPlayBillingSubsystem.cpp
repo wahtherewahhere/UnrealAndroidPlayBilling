@@ -248,7 +248,7 @@ FSkuDetailsRecord GetSkuDetailsRecordStructFromJavaObject(JNIEnv* Env, jobject O
 	auto JIntroductoryPrice				= GetScopedStringFromObject(Env, Object, SkuDetailsRecord_IntroductoryPrice_FieldID);
 	int64 IntroductoryPriceAmountMicros	= (int64)Env->GetLongField(Object, SkuDetailsRecord_IntroductoryPriceAmountMicros_FieldID);
 	auto JIntroductoryPricePeriod		= GetScopedStringFromObject(Env, Object, SkuDetailsRecord_IntroductoryPricePeriod_FieldID);
-	int IntroductoryPriceCycles			= GetScopedStringFromObject(Env, Object, SkuDetailsRecord_IntroductoryPriceCycles_FieldID);
+	int IntroductoryPriceCycles			= (int)Env->GetIntField(Object, SkuDetailsRecord_IntroductoryPriceCycles_FieldID);
 	auto JIconURL						= GetScopedStringFromObject(Env, Object, SkuDetailsRecord_IconURL_FieldID);
 
 	// Construct FSkuDetailsRecord struct
